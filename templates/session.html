@@ -1,46 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
-    <a class="navbar-brand" href="/complaint">Complaint</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="/edit">Edit Profile</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="/userlogin">Logout</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </nav>
-    <section class="bg-light text-black p-4 text-center">
-        <div class="container">
-            <center><h1> <span class="text-black">
-               {% if session.name %}
-                Welcome {{session.name}}
-                {% else %}
-                Not Yet Login
-                {% endif %}
-            </span>
-            </h1></center>
-              </div>
-    </section>
-    <h1>This is a Crime Reporting Application</h1>
-    <br>
-    <p style="font-size: 2em;">            It will help you to report the Crime through online Using this Web Application. This reports are only accessed by the Crime Department of India. So You can feel safe to share the Crime incident with us.
-      Use Complaint button in above navigation bar to Give the Description and Remarks about the crime incident. 
-      You can also Edit the Your profile clicking Edit Profile.
-    </p>
+{% extends "base2.html"%}
+{% block content %}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
-</html>
+{% if session.name %}
+<h1><center> Welcome {{session.name}}</center></h1>
+{% else %}
+Not Yet Login
+{% endif %}
+
+{% endblock %}
